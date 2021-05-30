@@ -3,13 +3,16 @@ var router = express.Router();
 var unirest = require("unirest");
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.post('/', function(req, res, next) {
+
+    var searchQuery = req.body.searchquery;
+    console.log(searchQuery);
 
     //This requests the API data
     var request = unirest("GET", "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/quickAnswer");
      
     request.query({
-        "q": "How much vitamin c is in 2 apples?"
+        "q": searchQuery
     });
     
     request.headers({
@@ -22,7 +25,10 @@ router.get('/', function(req, res, next) {
     request.end(function (response) {
         if (response.error) throw new Error(response.error);
         
-        var data = JSON.parse(response.body);
+        var data = response.body;
+        console.log(response.body);
+        console.log(data);
+        console.log(data.answer);
         res.render('viewrecipe', {data});
     });
     
