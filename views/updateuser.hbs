@@ -1,0 +1,28 @@
+<section id="main" class="container medium">
+    <header>
+        <h2>Update User Account</h2>
+        <p>Need to change your password or email?</p>
+    </header>
+    <div class="box">
+        <form action="/updatecomplete" method="POST">
+            <div class="col-12">
+                <label>Select which item to update:</label>
+                <select name="changing_attr">
+                    <option value="email">Email Address</option>
+                    <option value="password">Password</option>
+                </select><br>
+            </div>
+            <div class="col-12">
+                <label>Please enter the current email address we have on file:</label>
+                <input type="text" name="email" placeholder="Current Email Address"><br>
+            </div>
+            <div class="col-12">
+                <label>Please enter the new value of the record you are changing:</label>
+                <input type="text" name="new_value" placeholder="Enter the new value"><br>
+            </div>
+            <ul class="actions special">
+			    <li><input type="submit" value="Update"></li>
+            </ul>
+        </form>
+    </div>
+</section>

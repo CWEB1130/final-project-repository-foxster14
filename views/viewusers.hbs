@@ -1,13 +1,23 @@
-<table>
-        <tr>
-            <th>Email</th>
-            <th>Password</th>
-        </tr>
+<section class="box">
+    <h3>View All User Profiles</h3>
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Email</th>
+                    <th>Password</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each createdUsers}}
+                <tr>
+                    <td>{{this.email}}</td>
+                    <td>{{this.password}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</section>
+
     {{!-- {{Iterate through each boxer object and display to webpage}} --}}
-    {{#each createdUsers}}
-        <tr>
-            <td>{{this.email}}</td>
-            <td>{{this.password}}</td>
-        </tr>
-    {{/each}}
-</table>
