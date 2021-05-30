@@ -36,11 +36,19 @@ var connection = mysql.createConnection({
         connection.end()
 
         let userData = fs.readFileSync('./users.json');
+        console.log(userData);
         let siteUsers = JSON.parse(userData);
         siteUsers.push(user); //update user object so I can display new info on next page
         //Write new user data to JSON file
         const usersString = JSON.stringify(siteUsers)
-        fs.writeFile('./users.json')
+        fs.writeFile('./users.json', usersString, err => {
+            //error handling if, issue arises with file, else output to successfully wrote file
+            if (err) {
+                console.log('Error writing file', err)
+            } else {
+                console.log('Successfully wrote file')
+            }
+        })
 
 
         res.render('addeduser', user);

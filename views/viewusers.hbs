@@ -1,0 +1,13 @@
+<table>
+        <tr>
+            <th>Email</th>
+            <th>Password</th>
+        </tr>
+    {{!-- {{Iterate through each boxer object and display to webpage}} --}}
+    {{#each createdUsers}}
+        <tr>
+            <td>{{this.email}}</td>
+            <td>{{this.password}}</td>
+        </tr>
+    {{/each}}
+</table>

@@ -1,13 +1,16 @@
-<!-- Banner -->
-	<section id="banner">
-		<p>Please enter the food item you'd like to see nutrition data for:</p>
-    </section>
-		<form action="/viewrecipe" method="POST">
-            <input type="text" name="searchquery" class="" placeholder="How much vitamin C is in two apples?" size="40"><br>
-   
-            <input type="submit" class="btn btn-primary" value="Submit">
+<section id="main" class="container medium">
+    <header>
+        <h2>Search</h2>
+        <p>Look up nutritional information on common food items</p>
+    </header>
+    <div class="box">
+        <form action="/viewrecipe" method="POST">
+            <div class="col-12">
+                 <input type="text" name="searchquery" placeholder="How much vitamin C is in two apples?"><br>
+            </div>
+            <ul class="actions special">
+			    <li><input type="submit" value="Search"></li>
+            </ul>
         </form>
-        <!--<ul class="actions special">
-			    <li><a href="#" class="button primary">Log In</a></li>
-				<li><a href="#" class="button">Learn More</a></li>
-		</ul>-->
+    </div>
+</section>
